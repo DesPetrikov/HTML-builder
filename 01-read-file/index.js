@@ -16,6 +16,6 @@ stream.on('error', (err) => {
 		console.log(`В директории ${path.dirname(__filename)} не найден файл ${path.basename(text)}`);
 	} 
 	else{
-		console.error(err);
+		console.error(err.message);
 	}
 })
