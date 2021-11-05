@@ -58,6 +58,7 @@ readHtml()
 async function readStyles(){
 	const writeStream = fs.createWriteStream(bundleCssPath);
 	const dir = await fs.promises.readdir(stylesFolder, {withFileTypes: true});
+	[dir[dir.length - 3], dir[dir.length - 1]] = [dir[dir.length - 1], dir[dir.length - 3]]
 	for await (let entry of dir){
 		if(entry.isFile() && path.extname(entry.name) === '.css'){
 			const readStream = new fs.ReadStream(path.join(__dirname, 'styles', entry.name), {encoding: 'utf-8'});
