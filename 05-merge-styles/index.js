@@ -17,7 +17,7 @@ async function readStyles(){
 				}
 			});
 			readStream.on('error', (err) => {
-				console.error(err);
+				console.error(err.message);
 			})
 		}	
 	}
